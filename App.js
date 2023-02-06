@@ -9,7 +9,10 @@ import { useState } from 'react';
 
 
  const Home =(props) =>{
-  
+  const list = [
+    {id: 1, name: 'Bún bò', mssv: 35000},
+    {id: 2, name: 'Bún trộn', mssv: 35000}
+];
   const nav = props.navigation;
     return(
       <View>
@@ -23,8 +26,8 @@ import { useState } from 'react';
       onPress={() => nav.navigate('Quản lý',
       {
         id: 1,
-        name: "Dương Văn Đức",
-        mssv: 'ph19780'
+        name: "Sản phẩm 1",
+        mssv: 30000
       })}/>
        <Button 
       title='About'
@@ -42,15 +45,19 @@ import { useState } from 'react';
  }
  
  const Qly = (props) =>{
-  const route = props.route;
+  const {id} = props.route.params;
+  const {name} = props.route.params;
+  const {mssv} = props.route.params;
   // const {route} = props.route;
 
   // nếu params có chuyền sang name thì lấy 
   // khong thì sẽ gán mạc định 'Manager'
-  const nameTuHome = route.params.id || 'Manager';
+  
   return(
   <View>
-      <Text>ID = {nameTuHome}</Text>
+      <Text>ID = {id}</Text>
+      <Text>name = {name}</Text>
+      <Text>price = {mssv}</Text>
       </View>
   )
   
