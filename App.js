@@ -34,8 +34,8 @@ import { useState } from 'react';
       onPress={() => nav.navigate('About',
         {
           id: 1,
-          name: "Dương Văn Đức",
-          mssv: 'ph19780',
+          name: "Tao Hoai Thuong",
+          mssv: 'ph19784',
          
         }
         )}/>
